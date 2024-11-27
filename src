@@ -1,0 +1,49 @@
+create database academia;
+USE academia;
+create table alunos (
+id_aluno int not null,
+nome int not null,
+data_nascimento decimal(10, 2),
+genero int not null,
+telefone int not null,
+email int not null,
+data_cadastro int not null
+);
+create table professores (
+id_professor int auto_increment primary key,
+nome int not null,
+especialidade int not null,
+telefone int not null,
+email int not null
+);
+create table planos (
+id_plano int auto_increment primary key,
+tipo_plano int not null,
+descricao int not null,
+preco int not null,
+duracao_meses int not null
+);
+create table treinos (
+id_treino int auto_increment 
+primary key,
+id_aluno int not null,
+descricao int not null,
+data_inicio int not null,
+data_fim int not null
+);
+create table aulas (
+id_aula int auto_increment auto_increment
+primary key,
+tipo_aula int not null,
+id_professor int not null,
+horario int not null,
+capacidade int not null
+);
+create table pagamentos (
+id_pagamento int auto_increment auto_increment primary key,
+id_aluno int not null,
+id_plano int not null,
+data_pagamento int not null,
+valor_pago int not null,
+forma_pagamento int not null
+);
