@@ -1,33 +1,28 @@
-# Banco de Dados – Sistema de Academia
+#  Sistema de Gestão de Academia (Database Schema)
 
-Projeto de banco de dados relacional desenvolvido em MySQL para simular o gerenciamento completo de uma academia.
+Este repositório contém a modelagem completa de um banco de dados relacional para o gerenciamento de uma academia, cobrindo desde o cadastro de alunos até o controle de pagamentos e treinos.
 
-## Descrição
-O sistema contempla o cadastro de alunos, professores, planos, treinos, aulas e pagamentos, utilizando boas práticas de modelagem relacional, com chaves primárias, chaves estrangeiras e tipos de dados adequados.
+##  Estrutura do Banco de Dados
 
-## Funcionalidades
-- Cadastro e controle de alunos e professores  
-- Gerenciamento de planos e pagamentos  
-- Associação de treinos aos alunos  
-- Controle de aulas e professores responsáveis  
-- Relacionamentos consistentes entre as tabelas  
+O projeto demonstra conceitos avançados de SQL, incluindo integridade referencial e normalização de dados.
 
-## Tecnologias Utilizadas
-- MySQL  
-- SQL (DDL e DML)
+### Principais Tabelas:
+- **Alunos & Professores:** Cadastro completo com informações de contato.
+- **Planos:** Diferenciação entre modalidades (Mensal, Anual) e valores.
+- **Pagamentos:** Registro financeiro vinculado ao aluno e ao plano escolhido.
+- **Treinos & Aulas:** Controle de cronograma de exercícios e capacidade de turmas.
 
-## Estrutura do Banco
-- alunos  
-- professores  
-- planos  
-- treinos  
-- aulas  
-- pagamentos  
+##  Tecnologias
+- **SQL (MySQL/PostgreSQL)**
+- **Relacionamentos:** 1:N (Um aluno para muitos treinos) e N:N (através de tabelas de associação).
 
-## Como Executar
-1. Execute o arquivo `schema.sql` para criar o banco e as tabelas  
-2. Execute o arquivo `seed.sql` para inserir dados fictícios  
-3. Utilize consultas SQL para análise e manipulação dos dados  
+##  Como Testar
+1. Copie o conteúdo do arquivo `schema.sql`.
+2. Cole em seu gerenciador de banco de dados (MySQL Workbench, pgAdmin ou [OneCompiler](https://onecompiler.com/mysql)).
+3. *Nota: Se testar online, remova as linhas `CREATE DATABASE` e `USE`.*
 
-## Objetivo do Projeto
-Demonstrar conhecimentos em modelagem de banco de dados, organização de schema, uso de relacionamentos e padronização SQL, com foco em portfólio para vagas de estágio ou desenvolvedor júnior.
+##  Consultas de Exemplo Incluídas
+O script já conta com inserções de dados (`INSERT`) que permitem validar:
+- Histórico de pagamentos por aluno.
+- Agenda de aulas por professor.
+- Validade de treinos ativos.
